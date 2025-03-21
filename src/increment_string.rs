@@ -1,7 +1,6 @@
 pub fn increment_string(s: &str) -> String {
     let string_part = remove_number(s);
     let number_part = extract_number(s);
-
     let number_plus_one = add_one(&number_part);
 
     format!("{}{}", string_part, number_plus_one).to_string()
@@ -23,17 +22,6 @@ pub fn extract_number(s: &str) -> String {
     }
     result.reverse();
     result.iter().collect()
-}
-
-pub fn add_one2(s: &str) -> String {
-    let parsed = s.parse::<u128>();
-    let num = match parsed {
-        Ok(v) => v + 1,
-        Err(_) => 0,
-    };
-
-    let nb_char = s.len();
-    format!("{:0nb_char$}", num).to_string()
 }
 
 pub fn add_one(s: &str) -> String {
