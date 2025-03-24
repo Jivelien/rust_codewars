@@ -9,12 +9,6 @@ pub fn cakes(recipe: &HashMap<&str, u32>, available: &HashMap<&str, u32>) -> u32
             false => return 0,
         };
     }
-
-    let mut result: u32 = 99;
-    for ingredient in potential_cake.keys() {
-        if potential_cake[ingredient] < result {
-            result = potential_cake[ingredient];
-        }
-    }
-    result
+    
+    *potential_cake.values().min().unwrap()
 }
