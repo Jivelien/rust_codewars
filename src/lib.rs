@@ -8,3 +8,4 @@ pub mod reverse_word;
 pub mod stringendwith;
 pub mod tower_builder;
 pub mod rot13;
+pub mod max_sequence;
